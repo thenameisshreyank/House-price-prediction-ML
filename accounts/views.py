@@ -1,12 +1,14 @@
 
 from distutils.log import error
-from email import message
+
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 import pandas as pd
 import pickle 
+from django.contrib import messages
+
 data=pd.pandas.read_csv('/home/shreyank/miniproject/mini/home/static/img/excel/Cleaned_data.csv')
 
 
@@ -33,7 +35,16 @@ def login(request):
         user = authenticate(username=uname, password=lpassword)
         #dic={'name':uname,'password':lpassword,'locations':locations}
         if user is not None:
-           return render(request,'product.html',{'name':uname,'password':lpassword,'locations':locations})
+            messages.success(request,"LOGIN SUCESS!")
+            return render(request,'product.html',{'name':uname,'password':lpassword})
         else:
+            messages.error(request,"INVALID USERNAME OR PASSWORD")
             print(" no sucesss")
     return render(request,'login.html')
+
+
+def details(request):
+    
+    return render(request,'details.html')
+
+    

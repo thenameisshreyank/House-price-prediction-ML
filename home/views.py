@@ -78,5 +78,3 @@ def hlogin(request):
             messages.error(request,"invalid")
             return render(request,'home')
 
-def hlogout(request):
-    pass
