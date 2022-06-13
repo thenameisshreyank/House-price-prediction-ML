@@ -36,15 +36,24 @@ def login(request):
         #dic={'name':uname,'password':lpassword,'locations':locations}
         if user is not None:
             messages.success(request,"LOGIN SUCESS!")
-            return render(request,'product.html',{'name':uname,'password':lpassword})
+           
+            return render(request,'product.html',{'name':uname,'password':lpassword,'location':locations,'data':'Add Data'})
         else:
             messages.error(request,"INVALID USERNAME OR PASSWORD")
             print(" no sucesss")
     return render(request,'login.html')
 
 
-def details(request):
-    
-    return render(request,'details.html')
+def adddata(request):
+    locations=sorted(data['location'].unique())
+    if request.method=='POST':
+        aname=request.POST.get('location',False)
+        bh=request.POST.get('bhk',False)
+        size=request.POST.get('size',False)
+        bt=request.POST.get('bt',False)
+        print(aname,bh,size,bt)
+    return render(request,'adddata.html',{'location':locations})
+
+
 
     

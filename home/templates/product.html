@@ -13,6 +13,11 @@
   .form-switch {
     display: inline-block;
   }
+  #data{
+   margin-top: -9.5%;
+    margin-left: 85%;
+    
+  }
 
   .navbar-nav {
     margin-left: 85%;
@@ -38,6 +43,10 @@
 
   #name {
     margin-left: 60px;
+  }
+  #data>a{
+    text-decoration: none;
+    color: aliceblue;
   }
 </style>
 
@@ -73,14 +82,17 @@
     {%endif%}
     <div class="header">
       <div id="name">Name: {{name}}</div>
-      <div id="password">Password: {{password}}</div>
+      {% if data%}
+      <button class="btn btn-success" id="data" ><a href="adddata">{{data}}</a></button>
+      {%endif%}
+      
     </div><br>
     <form action="/product" method="post">
       <h1>HOUSE PRICE PREDICTION</h1><br><br>
       <div class="input-group mb-3 ">
         <label class="input-group-text" for="location">Area</label>
         <select class="form-select" id="location" name="location">
-          {% for loc in locations %}
+          {% for loc in location %}
 
           <option value="{{loc}}">{{loc}}</option>
 
