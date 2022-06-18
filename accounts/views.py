@@ -37,7 +37,7 @@ def login(request):
         if user is not None:
             messages.success(request,"LOGIN SUCESS!")
            
-            return render(request,'product.html',{'name':uname,'password':lpassword,'location':locations,'data':'Add Data'})
+            return render(request,'product.html',{'name':uname,'password':lpassword,'locations':locations,'data':'Add Data'})
         else:
             messages.error(request,"INVALID USERNAME OR PASSWORD")
             print(" no sucesss")
