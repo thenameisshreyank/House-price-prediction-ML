@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,19 +50,33 @@
         
         <h2 class="mt-4"><strong>OUR ESTIMATION</strong></h2>
                 <br><br><br>
-            <h3> Area Name : {{dict.area}}</h3><br>
+                <form action="accounts/liked" method="post">
+            <h3 > Area Name : {{dict.area}}</h3><br>
+            <input type="text" name="area" hidden value={{dict.area}}>
             <h3>NO. of BHK : {{dict.bhk}}</h3><br>
+            <input type="text" name="bhk" hidden value={{dict.bhk}}>
             <h3>Size of Area :{{dict.size}}</h3><br>
+            <input type="text" name="size" hidden value={{dict.size}}>
             <h3>No. of Bathroom: {{dict.bt}}</h3><br>
+            <input type="text" name="bath" hidden value={{dict.bt}}>
             <h3>DUPLEX HOUSE :{{dict.duplex}}</h3><br>
+            <input type="text" name="duplex" hidden value={{dict.duplex}}>
             <h3>PARKING FACILITY : {{dict.parking}}</h3><br>
-            <h3>BALCANY AVAILABILITY : {{dict.balcony}}</h3>
-            
+            <input type="text" name="parking" hidden value={{dict.parking}}>
+            <h3>BALCONY AVAILABILITY : {{dict.balcony}}</h3>
+            <input type="text" name="balcony" hidden value={{dict.balcony}}>
+            {% csrf_token %}
             <br><br><br><br>
             <hr>
             <h2>Estimated Value : {{dict.answer}} Rs</h2>
-       
-   
+            <input type="text" name="answer"  value={{dict.answer}} hidden>
+            {%if dict.like%}
+            <button type="submit" class="btn btn-info" style="margin-left: 50%;">LIKE</button>
+            {%endif%}
+          
+            </form>
+            
+            
     <br><br>
     
     <div class="map" style="margin-left: 55%;">

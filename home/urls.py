@@ -1,11 +1,12 @@
 
+from unicodedata import name
 from . import views
-from django.urls import path
+from django.urls import path,include
 
 
 urlpatterns=[
     path('',views.homepage,name="home"),
     
-    path('product',views.product,name='product'),
-    #path('answer',views.answer),
+    path('gproduct',views.gproduct,name='gproduct'),
+    
 ]

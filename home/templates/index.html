@@ -65,6 +65,56 @@
     display: inline-block;
     line-height: 1em;
   }
+  .card {
+    perspective: 130rem;
+    position: relative;
+    height: 10rem;
+    max-width: 400px;
+    margin: 2rem;
+    box-shadow: none;
+    background: none;
+    width: 300px;
+    padding: 10px;
+  }
+  .cards{
+    margin: 5%;
+    margin-left: 8%;
+  }
+  
+  .card-side {
+    height: 10rem;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:2rem;
+    color: white;
+    
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+    background-color: #4158D0;
+    text-align: center;
+    background-image: linear-gradient(43deg, #4158D0 0%,#C850C0 46%, #FFCC70 100%);
+  }
+  
+  .card-side.front {
+    text-align: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
+  }
 </style>
 
 <body>
@@ -105,6 +155,33 @@
         </a>
       </div>
     </div><br>
+    <div class="cards" style="display: flex;">
+    <div class="card">
+      <div class="card-side front">
+        <div>MISSION</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-side front">
+        <div>VISSION</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-side front">
+        <div>NEXT</div>
+      </div>
+      <div class="card-side back">
+        <div>Back Side</div>
+      </div>
+    </div>
+  </div>
+    
     <h4 class="ml6" style="text-align: center;">
         <span class="text-wrapper">
           <span class="letters m-5" style="margin-left: 50%;" >OUR SERVICES</span>
@@ -125,13 +202,13 @@
         <div class="box">
             Guest <br>
             <img src="{% static 'img/guest.png'%}" class="imgbox mt-3" alt="Register"><br>
-            <button type="button" class="btn btn-warning mt-2"><a href="product">Click Here</a></button>
+            <button type="button" class="btn btn-warning mt-2"><a href="gproduct">Click Here</a></button>
         </div>
     </div><br>
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          Team  © 2022 Copyright :
+          Team  C2 © 2022 Copyright :
           <a class="text-dark" href=""> House Price Prediction</a>
         </div>
         <!-- Copyright -->

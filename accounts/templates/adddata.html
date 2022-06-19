@@ -61,6 +61,13 @@
           <label class="form-check-label" for="flexSwitchCheckChecked">3 BATHROOM</label>
         </div>
         <br><br>
+        <h2>Amount</h2>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter amount" aria-label="Recipient's username" aria-describedby="basic-addon2" name="amount">
+        <div class="input-group-append">
+          <span class="input-group-text" id="amount">RS</span>
+        </div>
+      </div><br>
         <h2>DUPLEX HOUSE </h2>
       <div >
         
@@ -90,6 +97,7 @@
           <input type="radio" name="balcany" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;Not nedded
         </label>
       </div><br>
+      
         {% csrf_token %}
         <button type="submit" class="btn btn-success"
           >Add Data</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;

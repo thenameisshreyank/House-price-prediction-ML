@@ -82,12 +82,10 @@
     {%endif%}
     <div class="header">
       <div id="name">Name: {{name}}</div>
-      {% if data%}
-      <button class="btn btn-success" id="data" ><a href="adddata">{{data}}</a></button>
-      {%endif%}
+      
       
     </div><br>
-    <form action="/product" method="post">
+    <form action="gproduct" method="post">
       <h1>HOUSE PRICE PREDICTION</h1><br><br>
       <div class="input-group mb-3 ">
         <label class="input-group-text" for="location">Area</label>
@@ -153,19 +151,18 @@
         </label>
       </div>
       <br>
-      <h2>BALCANY AVAILABILITY</h2>
+      <h2>BALCONY AVAILABILITY</h2>
       <div>
         <label class="radio-inline">
-          <input type="radio" name="balcany" value="1" checked>&nbsp;&nbsp;&nbsp;Nedded
+          <input type="radio" name="balcany" value="1" checked>&nbsp;&nbsp;&nbsp;Needed
         </label>
         <label class="radio-inline">
-          <input type="radio" name="balcany" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;Not nedded
+          <input type="radio" name="balcany" value="0" style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;Not Needed
         </label>
       </div>
       <br><br>
       {% csrf_token %}
-      <button type="submit" class="btn btn-success"
-        onclick="javascript()">Predict!!</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <button type="submit" class="btn btn-success">Predict!!</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
       <!-- <button type="submit" class="btn btn-info" onClick="window.location.reload();">Search again!!</button> -->
     </form><br><br>
 
